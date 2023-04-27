@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="center">
+        <form #loginform="ngForm"
+              (ngSubmit)="inviteHero()">
+            <h1>Invite new user</h1>
+            <div class="inputbox">
+                <input type="email"
+                       required="required"
+                       name="email"
+                       [(ngModel)]="model.email">
+                <span>Email</span>
+            </div>
+            <div class="inputbox">
+                <input type="text"
+                       name="heroName"
+                       required="required"
+                       [(ngModel)]="model.heroName">
+                <span>Hero Name</span>
+            </div>
+            <div class="inputbox">
+                <button type="submit">Add user</button>
+            </div>
+        </form>
+    </div>
+</div>

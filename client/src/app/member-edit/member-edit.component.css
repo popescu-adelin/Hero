@@ -1,0 +1,141 @@
+.row::after {
+  clear: both;
+  display: table;
+}
+[class*="col-"] {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  float: left;
+}
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+.img {
+  width: 100%;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  height: 475px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
+.tabcontent-box {
+  padding: 0 40px;
+}
+.tabcontent-box h3 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.tabcontent-box p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+.card-footer {
+  text-align: center;
+}
+.btn {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 50%;
+  border: none;
+}
+.btn-primary {
+  background: dodgerblue;
+}
+.btn-primary:hover {
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
+  border: 1px solid dodgerblue;
+}
+.form-control {
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  resize: none;
+  font-size: 1.2rem;
+}
+h4 {
+  font-size: 1.4rem;
+}
+h4:nth-child(1) {
+  margin-top: 20px;
+}

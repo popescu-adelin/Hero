@@ -1,0 +1,45 @@
+<div class="row"
+     *ngIf="hero">
+    <div class="col-3 card">
+
+        <img src="{{hero.photoUrl || '../assets/images/defaultPhoto.jpg'}}"
+             alt=""
+             class="img">
+        <div class="card-body">
+            <h1>Hero: {{hero.heroName}}</h1>
+            <h3>Name: {{hero.lastName}} {{hero.firstName}}</h3>
+            <strong>Last Active: {{hero.lastActive | date}}</strong>
+        </div>
+
+
+    </div>
+    <div class="col-9">
+        <div class="tab">
+            <button class="tablinks"
+                    (click)="openTab($event, 'Details')">Details</button>
+            <button class="tablinks"
+                    (click)="openTab($event, 'Photos')">Photos</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Details"
+             class="tabcontent"
+             style="display: flex">
+            <div class="tabcontent-box">
+                <h3>About {{hero.heroName}}</h3>
+
+                <p>{{hero.introduction}}</p>
+            </div>
+
+        </div>
+
+        <div id="Photos"
+             class="tabcontent">
+            <ngx-gallery [options]="galleryOptions"
+                         [images]="galleryImages"
+                         class="ngx-gallery"></ngx-gallery>
+        </div>
+
+
+    </div>
+</div>

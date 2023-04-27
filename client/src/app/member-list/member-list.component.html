@@ -1,0 +1,8 @@
+<div>
+    <div class="row"
+         *ngFor="let hero of heroes$ | async">
+        <div class="col-3 ">
+            <app-member-card [hero]="hero"></app-member-card>
+        </div>
+    </div>
+</div>

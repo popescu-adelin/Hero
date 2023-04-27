@@ -1,0 +1,29 @@
+.box {
+  min-width: 200px;
+  min-height: 430px;
+  background-color: rgb(218, 210, 224);
+  margin: 10px 10px;
+  border-radius: 10px;
+}
+.card-img {
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+button {
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+.img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-body {
+  padding: 10px 20px;
+}
+p {
+  font-size: 1.2rem;
+}

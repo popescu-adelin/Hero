@@ -1,0 +1,51 @@
+<div class="topnav"
+     id="myTopnav">
+    <div class="navbar-group">
+        <h1 routerLink="">DEMO</h1>
+        <div *ngIf="accountService.currentUser$ | async"><a routerLink="/"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: true}">Home</a>
+            <a routerLink="/members"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: true}">Heroes</a>
+            <a routerLink="/invite"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: true}">Invite Hero</a>
+
+        </div>
+
+    </div>
+    <div class="navbar-group">
+        <form #loginForm="ngForm"
+              *ngIf="!(accountService.currentUser$ | async)"
+              (ngSubmit)="login()"
+              autocomplete="off">
+            <input type="email"
+                   name="email"
+                   placeholder="email"
+                   [(ngModel)]="model.email">
+            <input name="password"
+                   type="password"
+                   placeholder="password"
+                   [(ngModel)]="model.password">
+            <button type="submit">Login</button>
+        </form>
+        <div *ngIf="(accountService.currentUser$ |async) as user"
+             dropdown
+             class="dropdown">
+            <img src="{{user.photoUrl || '../assets/images/defaultPhoto.jpg'}}"
+                 alt=""
+                 class="nav-img">
+            <button (click)="dropdown()"
+                    class="dropbtn">Welcome {{user.heroName | titlecase}}</button>
+            <div id="myDropdown"
+                 class="dropdown-content">
+                <a routerLink="/edit">Edit Profile</a>
+                <a routerLink="/change-password">Change password</a>
+                <a href="#"
+                   (click)="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+
+</div>

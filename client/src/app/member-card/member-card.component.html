@@ -1,0 +1,13 @@
+<div class="box"
+     *ngIf="hero">
+    <div class="img-wrapper">
+        <img src="{{hero.photoUrl || '../assets/images/defaultPhoto.jpg'}}"
+             alt="{{hero.heroName}}"
+             class="card-img">
+        <button routerLink="/members/{{hero.email}}">See Hero</button>
+    </div>
+    <div class="card-body">
+        <h1>{{hero.heroName}}</h1>
+        <p *ngIf="hero.lastActive!=null">Last active:{{hero.lastActive | date}}</p>
+    </div>
+</div>

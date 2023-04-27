@@ -1,0 +1,77 @@
+<div class="row"
+     *ngIf="hero">
+    <div class="col-3 card">
+
+        <img src="{{hero.photoUrl || '../assets/images/defaultPhoto.jpg'}}"
+             alt=""
+             class="img">
+        <div class="card-body">
+            <h1>Hero: {{hero.heroName}}</h1>
+            <h3>Name: {{hero.firstName}} {{hero.lastName}}</h3>
+            <strong>Last Active: {{hero.lastActive | date}}</strong>
+        </div>
+        <div class="card-footer">
+            <button form="editForm"
+                    class="btn btn-primary"
+                    [disabled]="!editForm.dirty">Save changes</button>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="tab">
+            <button class="tablinks"
+                    (click)="openTab($event, 'Details')">Details</button>
+            <button class="tablinks"
+                    (click)="openTab($event, 'Photos')">Photos</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Details"
+             class="tabcontent"
+             style="display: flex">
+            <div class="tabcontent-box">
+                <h3>About {{hero.heroName}}</h3>
+                <form #editForm="ngForm"
+                      id="editForm"
+                      (ngSubmit)="updateHero()">
+                    <h4>Hero Name</h4>
+                    <textarea class="form-control"
+                              name="heroName"
+                              [ngModel]="hero.heroName"
+                              id=""
+                              cols="30"
+                              rows="1"></textarea>
+                    <h4>First Name</h4>
+                    <textarea class="form-control"
+                              name="firstName"
+                              [ngModel]="hero.firstName"
+                              id=""
+                              cols="30"
+                              rows="1"></textarea>
+                    <h4>Last Name</h4>
+                    <textarea class="form-control"
+                              name="lastName"
+                              [ngModel]="hero.lastName"
+                              id=""
+                              cols="30"
+                              rows="1"></textarea>
+                    <h4>Introduction</h4>
+                    <textarea class="form-control"
+                              name="introduction"
+                              [ngModel]="hero.introduction"
+                              id=""
+                              cols=""
+                              rows="3"></textarea>
+                </form>
+
+            </div>
+
+        </div>
+
+        <div id="Photos"
+             class="tabcontent">
+            <app-photo-editor [hero]="hero"></app-photo-editor>
+        </div>
+
+
+    </div>
+</div>
